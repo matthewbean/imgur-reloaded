@@ -29,7 +29,9 @@ const Current = () => {
   };
 
   if (loading === true) {
-    return <div className='loading'>LOADING</div>;
+    return <div className='loading'>
+      <img src={loader} alt="Loading" />
+    </div>;
   }
 
   return (
