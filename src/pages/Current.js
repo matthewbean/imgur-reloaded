@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import ImageContext from '../context/image/imageContext';
 import Comments from '../modules/Comments';
+import loader from '../assets/icons/loader.svg'
 
 const Current = () => {
   const imageContext = useContext(ImageContext);
