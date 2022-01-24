@@ -3,9 +3,15 @@
   padding: 0;
   margin: 0;
 }
+:root{
+  --black: #06101A;
+  --dark-grey: #1F2933;
+  --grey: #323F4B;
+  --light-grey: #52606D;
+  --text: #CBD2D9;
+}
 body {
-  background: #020024;
-  background: linear-gradient(167deg, #020024 0%, #005378 94%);
+  background: var(--black);
   background-attachment: fixed;
 }
 .main {
@@ -20,77 +26,7 @@ body {
   
 }
 
-.box {
-  margin: 20px;
-  border-radius: 10px;
-  display: grid;
 
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr 30px;
-  width: 300px;
-  height: auto;
-  grid-template-areas:
-    'title title'
-    'picture picture'
-    'up down';
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-}
-.title {
-  padding: 10px 20px 0 20px;
-  grid-area: title;
-  color: #f4f9ff;
-  border-radius: 10px 10px 0 0;
-}
-.text {
-  font-weight: bold;
-}
-.container {
-  display: flex;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-  justify-content: center;
-  grid-area: picture;
-  overflow: hidden;
-  margin: 0 20px;
-  border-radius: 10px;
-}
-.picture {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.upvote {
-  grid-area: up;
-  margin: 0 0 10px 20px;
-  color: white;
-  justify-self: center;
-}
-.icon {
-  display: inline-flex;
-  align-self: center;
-  padding-right: 5px;
-}
-
-.icon svg,
-.icon img {
-  height: 1em;
-  width: 1em;
-}
-
-.icon.baseline svg,
-.icon img {
-  top: 0.125em;
-  position: relative;
-}
-
-.downvote {
-  grid-area: down;
-  margin: 0 20px 10px 0;
-  color: #fff;
-  justify-self: center;
-}
 /* masonry */
 
 .my-masonry-grid {
@@ -106,103 +42,7 @@ body {
   background-clip: padding-box;
 }
 
-.my-masonry-grid_column > div {
-  background: rgba( 0, 0, 0, 0.40 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 6.5px );
-  -webkit-backdrop-filter: blur( 6.5px );
-  border-radius: 10px;
-  margin-bottom: 30px;
-}
-/*navbar*/
-.logo {
-  display: flex;
-}
-.link {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-  display: flex;
-  padding: 10px 30px 10px 20px;
 
-  background:rgb(0, 32, 13);
-
-  justify-content: space-between;
-}
-.dropdown {
-  margin: 0 5px 0 10px;
-}
-.button {
-  height: 32px;
-  border-radius: 5px;
-  margin-left: 10px;
-  background-color: #34495e;
-}
-
-#page1 {
-  margin: 0 0 0 20px;
-}
-/*dropdown*/
-/* Reset Select */
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  outline: 0;
-  box-shadow: none;
-  border: 0 !important;
-  background: #2c3e50;
-  background-image: none;
-}
-/* Remove IE arrow */
-select::-ms-expand {
-  display: none;
-}
-/* Custom Select */
-.select {
-  position: relative;
-  display: flex;
-  width: 10em;
-  height: 2em;
-  line-height: 2;
-  overflow: hidden;
-  border-radius: 0.25em;
-}
-select {
-  flex: 1;
-  padding: 0 0.5em;
-  color: #fff;
-  cursor: pointer;
-}
-/* Arrow */
-.select::after {
-  content: '\25BC';
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0 1em;
-  background: #34495e;
-  cursor: pointer;
-  pointer-events: none;
-  -webkit-transition: 0.25s all ease;
-  -o-transition: 0.25s all ease;
-  transition: 0.25s all ease;
-}
-/* Transition */
-.select:hover::after {
-  color: #fff;
-}
-.page-selector {
-  display: flex;
-}
 
 /* album page*/
 

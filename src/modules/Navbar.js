@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ImageContext from '../context/image/imageContext';
 import arrow from '../assets/icons/arrow.svg'
+import styles from './Navbar.module.css'
 const Navbar = () => {
   const imageContext = useContext(ImageContext);
   const { reload, setLoading, clearPage } = imageContext;
@@ -19,17 +20,17 @@ const Navbar = () => {
   };
 
   return (
-    <div className='navbar'>
-      <div className='logo'>
-        <Link to='/' className='link'>
+    <div className={styles.navbar}>
+      <div className={styles.logo}>
+        <Link to='/' className={styles.link}>
           IMGUR
         </Link>
       </div>
-      <div className='page-selector'>
-        <div className='select'>
+      <div className={styles.pageSelector}>
+        <div className={styles.select}>
           <select
             id='page1'
-            className='dropdown'
+            className={styles.dropdown}
             value={state.page1}
             onChange={onChange}
           >
@@ -38,10 +39,10 @@ const Navbar = () => {
             <option value='top'>Highest Scoring</option>
           </select>
         </div>
-        <div className='select'>
+        <div className={styles.select}>
           <select
             id='page2'
-            className='dropdown'
+            className={styles.dropdown}
             value={state.page2}
             onChange={onChange}
           >
@@ -52,8 +53,8 @@ const Navbar = () => {
           </select>
         </div>
 
-        <Link to='/' onClick={load} className='button'>
-          <img src={arrow} alt='GO' className='arrow' />
+        <Link to='/' onClick={load} className={styles.button}>
+          <img src={arrow} alt='GO' className={styles.arrow} />
         </Link>
       </div>
     </div>

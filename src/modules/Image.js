@@ -1,8 +1,10 @@
 import React, { Fragment, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ImageContext from '../context/image/imageContext';
-import views from '../assets/icons/eye.svg';
-import upvote from '../assets/icons/up-arrow.svg';
+import { FaHeart } from "react-icons/fa";
+import { FaArrowUp } from "react-icons/fa";
+import styles from './Image.module.css'
+
 
 const Image = ({ item, index }) => {
   const imageContext = useContext(ImageContext);
@@ -15,53 +17,50 @@ const Image = ({ item, index }) => {
   };
   if (item.images[0].type === 'video/mp4') {
     return (
-      <div className='box'>
-        <div className='title'>
-          <div className='text'>{item.title}</div>
+      <div className={styles.box}>
+        <div className={styles.title}>
+          <div className={styles.text}>{item.title}</div>
         </div>
-        <Link to='/post' onClick={openAlbum} className='container'>
+        <Link to='/post' onClick={openAlbum} className={styles.container}>
           <video
             src={item.images[0].link}
-            className='picture'
+            className={styles.picture}
             controls
             muted
             loop
           />
         </Link>
-        <div className='upvote'>
-          <div className='icon baseline'>
-            <img className='eye' alt='views:' src={views} />
+        <div className={styles.stats}>
+          <div className={styles.statIcon}>
+            <FaHeart />
+            {item.views}
           </div>
-          {item.views}
-        </div>
-        <div className='downvote'>
-          <div className='icon baseline'>
-            <img className='eye' alt='upvotes:' src={upvote} />
+          <div className={styles.statIcon}>
+            <FaArrowUp />
+            {item.score}
           </div>
-          {item.score}
         </div>
+      
       </div>
     );
   }
   return (
-    <div className='box'>
-      <div className='title'>
-        <div className='text'>{item.title}</div>
+    <div className={styles.box}>
+      <div className={styles.title}>
+        <div className={styles.text}>{item.title}</div>
       </div>
-      <Link to='/post' onClick={openAlbum} className='container'>
-        <img src={item.images[0].link} alt='missing item' className='picture' />
+      <Link to='/post' onClick={openAlbum} className={styles.container}>
+        <img src={item.images[0].link} alt='missing item' className={styles.picture} />
       </Link>
-      <div className='upvote'>
-        <div className='icon baseline'>
-          <img className='eye' alt='views:' src={views} />
+      <div className={styles.stats}>
+        <div className={styles.statIcon}>
+          <FaHeart />
+          {item.views}
         </div>
-        {item.views}
-      </div>
-      <div className='downvote'>
-        <div className='icon baseline'>
-          <img className='eye' alt='upvotes:' src={upvote} />
+        <div className={styles.statIcon}>
+          <FaArrowUp />
+          {item.score}
         </div>
-        {item.score}
       </div>
     </div>
   );
