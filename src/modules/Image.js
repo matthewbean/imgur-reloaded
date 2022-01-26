@@ -1,8 +1,9 @@
 import React, { Fragment, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import ImageContext from '../context/image/imageContext';
-import { FaHeart } from "react-icons/fa";
+import { FaEye } from "react-icons/fa";
 import { FaArrowUp } from "react-icons/fa";
+import { FaComments } from "react-icons/fa";
 import styles from './Image.module.css'
 
 
@@ -32,7 +33,11 @@ const Image = ({ item, index }) => {
         </Link>
         <div className={styles.stats}>
           <div className={styles.statIcon}>
-            <FaHeart />
+            <FaComments />
+            {item.comment_count}
+          </div>
+          <div className={styles.statIcon}>
+            <FaEye />
             {item.views}
           </div>
           <div className={styles.statIcon}>
@@ -54,7 +59,11 @@ const Image = ({ item, index }) => {
       </Link>
       <div className={styles.stats}>
         <div className={styles.statIcon}>
-          <FaHeart />
+            <FaComments />
+            {item.comment_count}
+        </div>
+        <div className={styles.statIcon}>
+          <FaEye />
           {item.views}
         </div>
         <div className={styles.statIcon}>

@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import ImageContext from '../context/image/imageContext';
 import Comment from './Comment';
-
+import styles from './Comments.module.css'
 const Comments = () => {
   const imageContext = useContext(ImageContext);
   const { comments } = imageContext;
   return (
-    <div className='comments-section'>
-      <h2 className='album-title'>COMMENTS</h2>
-      <div className='comments'>
+    <div className={styles.commentsSection}>
+      <h2 className={styles.albumTitle}>COMMENTS</h2>
+      <div className={styles.comments}>
         {comments.map(item => (
           <Comment
             author={item.author}

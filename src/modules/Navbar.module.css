@@ -13,7 +13,7 @@
     width: 100%;
     z-index: 1;
     display: flex;
-    padding: 10px 30px 10px 20px;
+    padding: 10px calc(5% + 10px) 10px calc(5% + 10px);
   
     background: var(--dark-grey);
   
@@ -24,9 +24,9 @@
   }
   .button {
     height: 32px;
-    border-radius: 5px;
+    border-radius: 0 5px 5px 0;
     margin-left: 10px;
-    background-color: #34495e;
+    background-color: var(--light-grey);
   }
   
   #page1 {
@@ -42,7 +42,7 @@
     outline: 0;
     box-shadow: none;
     border: 0 !important;
-    background: #2c3e50;
+    background: var(--grey);
     background-image: none;
   }
   /* Remove IE arrow */
@@ -72,7 +72,7 @@
     top: 0;
     right: 0;
     padding: 0 1em;
-    background: #34495e;
+    background: var(--light-grey);
     cursor: pointer;
     pointer-events: none;
     -webkit-transition: 0.25s all ease;

@@ -1,8 +1,10 @@
-import React, { useContext } from 'react';
-import ImageContext from '../context/image/imageContext';
-import Comments from '../modules/Comments';
-import loader from '../assets/icons/loader.svg'
-
+import React, { useContext } from "react";
+import ImageContext from "../context/image/imageContext";
+import Comments from "../modules/Comments";
+import loader from "../assets/icons/loader.svg";
+import { FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft } from "react-icons/fa";
+import styles from "./Current.module.css";
 const Current = () => {
   const imageContext = useContext(ImageContext);
   const {
@@ -13,7 +15,7 @@ const Current = () => {
     loadAlbum,
     loadComments,
     setLoading,
-    setIndex
+    setIndex,
   } = imageContext;
 
   const next = () => {
@@ -30,36 +32,46 @@ const Current = () => {
   };
 
   if (loading === true) {
-    return <div className='loading'>
-      <img src={loader} alt="Loading" />
-    </div>;
+    return (
+      <div className={styles.loading}>
+        <img src={loader} alt="Loading" />
+      </div>
+    );
   }
 
   return (
-    <div className='album-page'>
-      <div className='album'>
-        <div className='controls'>
-          <button onClick={previous}>Previous</button>
-          <button onClick={next}>Next</button>
-        </div>
-        <div className='album-title'>{current.title}</div>
-        {current.images.map(item =>
-          item.type === 'video/mp4' ? (
+    <div className={styles.albumPage}>
+      <div className={styles.controls}>
+        <button onClick={previous}>
+          <FaChevronLeft />
+        </button>
+        <button onClick={next}>
+          <FaChevronRight />
+        </button>
+      </div>
+      <div className={styles.album}>
+        <div className={styles.albumTitle}>{current.title}</div>
+        {current.images.map((item) =>
+          item.type === "video/mp4" ? (
             <div key={item.id}>
               <video
                 src={item.link}
                 key={item.id}
-                className='album-image'
+                className={styles.albumImage}
                 controls
                 muted
                 loop
               />
-              <p className='album-description'>{item.description}</p>
+              <p className={styles.albumDescription}>{item.description}</p>
             </div>
           ) : (
             <div key={item.id}>
-              <img className='album-image' alt='missing item' src={item.link} />
-              <p className='album-description'>{item.description}</p>
+              <img
+                className={styles.albumImage}
+                alt="missing item"
+                src={item.link}
+              />
+              <p className={styles.albumDescription}>{item.description}</p>
             </div>
           )
         )}

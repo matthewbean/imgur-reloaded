@@ -17,9 +17,9 @@ const Page = () => {
   //set breakpoints for columns
   const breakpointColumnsObj = {
     default: 4,
-    1200: 3,
-    940: 2,
-    640: 1
+    1400: 3,
+    1100: 2,
+    750: 1
   };
   if (loading === true) {
     return <div className='loading'>

@@ -1,0 +1,22 @@
+
+.commentContainer {
+  max-width: 490px;
+  margin: .5rem;
+  padding:.5rem;
+  color: var(--text);
+  border-left: solid 4px var(--text);
+}
+.commentContainer > .commentContainer {
+  border-radius: 0;
+  background-color: transparent;
+}
+a {
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+.author {
+  overflow: hidden;
+}
+.comment {
+  padding: .5rem;
+}
