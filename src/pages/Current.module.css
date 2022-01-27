@@ -1,3 +1,6 @@
+.albumPage{
+  margin: 0 3rem;
+}
 .album {
   max-width: 500px;
   background: var(--dark-grey);
@@ -5,23 +8,23 @@
   border-radius: 3px;
   margin: 5rem auto 2rem;
 }
-.controls {
-  display: flex;
+.controls >button {
   position: fixed;
-  width: 100vw;
-  left: 0;
   top: 52px;
-  padding: 0 1rem 0 0;
-  justify-content: space-between;
-}
-.controls > button {
   background-color: transparent;
   height: 100vh;
-  width: calc(50vw - 250px);
+  width: max(calc(50vw - 250px), 3rem);
   color: var(--text);
   font-size: 3rem;
   border: none;
   cursor: pointer;
+}
+.controls>button:first-child {
+  left: 0;
+}
+.controls>button:last-child {
+  right: 0;
+  top: 52px;
 }
 .albumTitle {
   color: var(--text);
@@ -30,7 +33,6 @@
   font-weight: 500;
 }
 .albumDescription {
-  padding: .75rem;
   color: var(--text);
 }
 .albumImage {
@@ -39,4 +41,9 @@
 }
 .albumPage {
   margin-top: 80px;
+}
+@media (max-width: 600px ) {
+  .controls >button {
+    font-size: 1.5rem;
+  }
 }

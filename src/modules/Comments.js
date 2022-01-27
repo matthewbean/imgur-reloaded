@@ -7,7 +7,7 @@ const Comments = () => {
   const { comments } = imageContext;
   return (
     <div className={styles.commentsSection}>
-      <h2 className={styles.albumTitle}>COMMENTS</h2>
+      <h2 className={styles.commentsTitle}>Comments</h2>
       <div className={styles.comments}>
         {comments.map(item => (
           <Comment

@@ -32,11 +32,9 @@ const Current = () => {
   };
 
   if (loading === true) {
-    return (
-      <div className={styles.loading}>
-        <img src={loader} alt="Loading" />
-      </div>
-    );
+    return <div className='loading'>
+      <img src={loader} alt="Loading" />
+    </div>;
   }
 
   return (
@@ -75,8 +73,8 @@ const Current = () => {
             </div>
           )
         )}
+        <Comments />
       </div>
-      <Comments />
     </div>
   );
 };

@@ -12,7 +12,6 @@
 }
 body {
   background: var(--black);
-  background-attachment: fixed;
 }
 .main {
   margin-top: 50px;
