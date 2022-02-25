@@ -30,10 +30,11 @@
   color: var(--text);
   font-size: 1.25rem;
   padding: .75rem;
-  font-weight: 500;
+  font-weight: 900;
 }
 .albumDescription {
   color: var(--text);
+  padding: 1rem;
 }
 .albumImage {
   width: 100%;
