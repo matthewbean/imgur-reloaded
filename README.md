@@ -1,7 +1,7 @@
 # Imgur Reloaded
 
 ## About
-Imgur Reskin is a web application that is built upon the functionality of the popular image hosting and sharing platform Imgur. This application offers a unique and fresh design that enhances the user experience while retaining the core features that made Imgur so popular.
+Imgur Reloaded is a web application that is built upon the functionality of the popular image hosting and sharing platform Imgur. This application offers a unique and fresh design that enhances the user experience while retaining the core features that made Imgur so popular.
 
 ## Features
 ✅ View images from the popular website imgur
